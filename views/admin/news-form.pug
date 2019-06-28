@@ -1,0 +1,21 @@
+extends ../layout
+
+block content
+  h1=title
+
+  if errors.errors !== undefined
+    each message in errors.errors
+        p=message
+
+  form(method="post")
+    p
+        label Tytuł
+        input(type="text" name="title")
+    p
+        label Autor
+        input(type="text" name="author" value="Przemysław Drożniak")
+    p
+        label Opis
+        input(type="text" name="description")
+    p
+        button(type="submit") Dodaj
